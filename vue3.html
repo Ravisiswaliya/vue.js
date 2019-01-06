@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue js2</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div class="container">
+	   <div id="app3">
+        <h2>{{name}}</h2>
+        <a v-bind:href="url" target="_blank">Go to LinkedIn Profile</a> 
+        <br>
+        <form method="post" class="col-md-4">
+          <input type="" name="" v-bind:value="fname" class="form-control">
+          <input type="" name="" v-bind:value="email" class="form-control">
+          <button class="btn btn-danger">Submit</button>
+        </form>
+        <div v-html='htmlContent'>{{htmlContent}}</div>
+        
+     </div>
+  </div>
+
+
+<script>
+  var myview3 = new Vue({
+      el: "#app3",
+      data:{
+        name:'Vue data &form input binding Practice',
+        url:'https://www.linkedin.com/in/ravisiswaliya',
+        fname:'Ravi',
+        email:'ravisiswaliya@gmail.com',
+        htmlContent:"<p>This is html binding example</p>"
+
+      },
+      methods:{
+        //vue function
+         
+         }
+  });
+</script>
+</body>
+</html>
