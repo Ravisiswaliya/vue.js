@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue js2</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div class="container">
+	   <div id="app2">
+      <h2>{{name}}</h2>
+      <p>{{run('for demo')}}</p>
+      <p>{{dataget()}}</p>
+     </div>
+  </div>
+
+
+
+
+
+<script>
+  var myview2 = new Vue({
+      el: "#app2",
+      data:{
+        name:'Vue Practice'
+
+      },
+      methods:{
+        //vue function
+         run:function(message){
+          return 'This is a vue function '+message;
+         },
+
+         dataget:function(){
+          return this.name;
+         }
+
+      }
+  });
+</script>
+</body>
+</html>
