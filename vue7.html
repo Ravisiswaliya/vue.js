@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue js7</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div class="container">
+	   <div id="app">
+      <h3>{{name}}</h3>
+      <h4>Counter:{{counter}}</h4>
+      <!-- now button will clickable only once -->
+      <button v-on:click.once="ibo">Increase</button>
+      <br>
+      <!-- to prevent redirect to given link -->
+      <a href="https://google.com" v-on:click.prevent>Google</a> 
+
+      <!-- Only once fired 'submit function now-->
+      <div id='app2' @click='submilclick'>
+        <button id ='btn' v-on:click.stop='submilclick'>Clicked</button>
+      </div>
+
+      
+      <div class="pcls" @click.capture='pclss' style="border: 2px solid black; height: 200px;width: 200px;">
+        <button type="button" @click='bc'>Click Me!</button>
+      </div>
+     </div>
+  </div>
+
+
+<script>
+  var myview4 = new Vue({
+      el: "#app",
+      data:{
+          name: "Event Modifier in VueJs",
+          counter:0,
+      },
+      methods:{
+        //vue function
+        ibo:function(){
+          this.counter++;
+        },
+        submilclick:function(){
+          console.log('clicked')
+        },
+        pclss:function(){
+          console.log('Div function fired')
+        },
+        bc:function(){
+          console.log('Button function fired')
+        }
+       
+       
+        }
+  });
+</script>
+</body>
+</html>
