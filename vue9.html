@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue js9</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div class="container">
+	   <div id="app3">
+        <h2>{{name}}</h2>
+        Printing last pressed Char:<input type="text" v-on:keypress='kpf'>
+       
+       <br>
+       Entered text:<input type="text" v-model='chr'>
+       Result :{{chr}}
+      
+      
+     </div>
+  </div>
+
+
+<script>
+  var myview3 = new Vue({
+      el: "#app3",
+      data:{
+        name:'Two way data binding in VueJs',
+        chr:""
+
+      },
+      methods:{
+        //vue function
+        kpf:function(event){
+          this.chr = event.key;
+        },
+         
+         }
+  });
+</script>
+</body>
+</html>
