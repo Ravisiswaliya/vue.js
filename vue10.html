@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VueJs 10</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div class="container">
+	   <div id="app3">
+        <h2 class="text-center">{{name}}</h2>
+        <form>
+       Amount:<input type="text" placeholder="Amount" v-model='amount' class="form-control">
+       Tax:<input type="text" placeholder="Tax %" v-model='tax'  class="form-control">
+       <h4>Amount: {{amount}}</h4>
+       <h4>Tax {{tax}}%: {{ta}}</h4>
+       <h4>Total Amount: {{t_a}}</h4>
+</form>
+      
+      
+     </div>
+  </div>
+
+
+<script>
+  var myview3 = new Vue({
+      el: "#app3",
+      data:{
+        name:'GST Bill Calculator',
+        amount: "",
+        tax: "",
+        result:"",
+        t_amount:"",
+        total_amount:"",
+
+      },
+      methods:{
+        //vue function
+        rf:function(){
+          console.log('This is first method');
+          return 'This is a function'
+        }
+         
+         },
+         computed:{
+          ta:function(){
+             this.t_amount =  this.amount*this.tax/100
+             return this.t_amount;
+          },
+          t_a:function(){
+            this.total_amount = Number(this.t_amount) + Number(this.amount)
+            return this.total_amount;
+          }
+         }
+  });
+</script>
+</body>
+</html>
