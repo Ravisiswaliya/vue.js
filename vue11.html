@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VueJs 11</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<style type="text/css">
+  button{
+    background-color: black;
+    border:1px solid black;
+    color:white;
+  }
+  button.redClass{
+     background-color: red;
+    border:1px solid red;
+    color:white;
+  }
+
+</style>
+
+</head>
+<body>
+  <div class="container">
+	   <div id="app">
+        <h2 class="text-center">{{name}}</h2>
+        
+
+      <button type='button' v-bind:class="{redClass:isActive}" @click="toggleClass">Demo Button</button>
+      
+     </div>
+  </div>
+
+
+<script>
+  var myview = new Vue({
+    el: '#app',
+    data:{
+      name:'Adding dynamic class in VueJs',
+      isActive:true,
+    },
+    methods:{
+      toggleClass:function(){
+        this.isActive=!this.isActive;
+      },
+    },
+
+
+  });
+     
+</script>
+</body>
+</html>
