@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VueJs 13</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<style type="text/css">
+  
+
+</style>
+
+</head>
+<body>
+  <div class="container">
+	   <div id="app">
+        <h2 class="text-center">{{name}}</h2>
+        <li v-for = 'i in info'>{{i}}</li>
+        <br>
+
+        <table class="table">
+          <tr>
+            <th>Name</th>
+            <th>Cat</th>
+            <th>Cat</th>
+          </tr>
+          <tr v-for='company in companies'>
+            <td>{{company.name}}</td>
+            <td>{{company.cat}}</td>
+            <td>{{company.country}}</td>
+
+          </tr>
+        </table>
+        {{companies}}
+
+        
+     </div>
+  </div>
+
+
+<script>
+  var myview = new Vue({
+    el: '#app',
+    data:{
+      name:'Rendering list in VueJs',
+      info: ['VueJs', 'JS Framework', 12345],
+      companies:[
+        {name:'Google', cat:'Tech', country:'USA'},
+        {name:'HDFC', cat:'Finance', country:'INDIA'},
+        {name:'Cousera', cat:'Education',country: 'USA'},
+      ],
+      
+    },
+    methods:{
+      
+    },
+
+  });
+     
+</script>
+</body>
+</html>
