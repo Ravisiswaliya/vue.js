@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VueJs 16</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<style type="text/css">
+  
+
+</style>
+
+</head>
+<body>
+  <div class="container">
+    
+	   <div id="app">
+        <h2 class="text-center">{{title}}</h2>
+        <input type="text" placeholder="Enter Name" v-model='name'>
+        <input type="text" placeholder="Enter Website" v-model='web'>
+
+        <h3>Email:{{email}}</h3>
+        
+  </div>
+
+</div>
+<script>
+
+var a = new Vue({
+  el: '#app',
+  data:{
+    title: "Computed Property in VueJs",
+    name:'example',
+    web:'company.com',
+
+  },
+  methods:{},
+  computed:{
+    //get function
+    email:{
+      get:function(){
+      return this.name+'@'+this.web;
+    },
+    },
+  
+    },
+});
+     
+</script>
+</body>
+</html>
