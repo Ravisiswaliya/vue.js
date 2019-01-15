@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VueJs 15</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<style type="text/css">
+  
+
+</style>
+
+</head>
+<body>
+  <div class="container">
+    
+	   <div id="app">
+        <h2 class="text-center">{{title}}</h2>
+        <demo></demo>
+        
+  </div>
+
+</div>
+<script>
+Vue.component("demo",{
+  template: "<p>This is a new tag created in VueJs.<br>Function:{{ fun() }}</p>",
+  data:function(){
+    return{
+      name:'VueJs',
+      dis:'JS framework for front-end'
+    }
+  },
+  methods:{
+    fun:function(){
+      return 'this is a Vue function inside vue component'
+    },
+  },
+});
+  
+  var appview = new Vue({
+    el: '#app',
+    data:{
+      title:'Components in VueJs',
+    },
+    methods:{},
+  });
+     
+</script>
+</body>
+</html>
