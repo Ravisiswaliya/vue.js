@@ -1,48 +1,46 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Vue js5</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Vue js5</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
+
 <body>
-  <div class="container">
-	   <div id="app4">
-      <h3>{{name}}</h3>
-      <div class="mva" v-on:mousemove='mvfunction' style="height: 200px;width: 200px;border: 2px solid black;">
-        <span>{{x}}, {{y}}</span>
-        <button type="button" v-on:mouseover='omo'>Mouse Over</button>
-      </div>
-       
-     </div>
-  </div>
+    <div class="container">
+        <div id="app4">
+            <h3>{{name}}</h3>
+            <div class="mva" v-on:mousemove='mvfunction' style="height: 200px;width: 200px;border: 2px solid black;">
+                <span>{{x}}, {{y}}</span>
+                <button type="button" v-on:mouseover='omo'>Mouse Over</button>
+            </div>
+
+        </div>
+    </div>
 
 
-<script>
-  var myview4 = new Vue({
-      el: "#app4",
-      data:{
-          name: "MouseOver, mouseOut, mouseIn in VueJs",
-          x:0,
-          y:0,   
-
-      },
-      methods:{
-        //vue function
-        mvfunction:function(event){
-            this.x = event.offsetX;
-            this.y = event.offsetY;
-        },
-        omo:function(){
-        console.log('Mouse Over function')
-
-        }
-        
-        
-        
-        }
-  });
-</script>
+    <script>
+        var myview4 = new Vue({
+            el: "#app4",
+            data: {
+                name: "MouseOver, mouseOut, mouseIn in VueJs",
+                x: 0,
+                y: 0,
+            },
+            methods: {
+                //vue function
+                mvfunction: function(event) {
+                    this.x = event.offsetX;
+                    this.y = event.offsetY;
+                },
+                omo: function() {
+                    console.log('Mouse Over function')
+                }
+            }
+        });
+    </script>
 </body>
+
 </html>

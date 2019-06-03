@@ -1,45 +1,64 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Vue js4</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Vue js4</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
+
 <body>
-  <div class="container">
-	   <div id="app4">
-        <h2>{{name}}</h2>
-       <h3>Counter: {{counter}}</h3>
-        <button type="button" v-on:click="increment(3)">Increment</button>
-        <button type="button" v-on:click="decrement(3)">decrement</button>
-        
-        
-        
-     </div>
-  </div>
+    <div class="container">
+        <div id="app4" class="col-md-6">
+            <h2>{{name}}</h2>
+            <h3>Counter: {{counter}}</h3>
+            <button type="button" v-on:click="increment(3)">Increment</button>
+            <button type="button" v-on:click="decrement(3)">decrement</button>
+        </div>
+        <div id="practice" class="col-md-6">
+            <h4>Result:{{countn}}</h4>
+            <button class="btn btn-danger" v-on:click="ssub(1)">Decrease by 1</button>
+            <button class="btn btn-success" v-on:click="aadd(1)">Increase by 1</button>
+        </div>
+    </div>
 
 
-<script>
-  var myview4 = new Vue({
-      el: "#app4",
-      data:{
-          name: "Event handling in VueJs",
-          counter:0,     
+    <script>
+        var myview4 = new Vue({
+            el: "#app4",
+            data: {
+                name: "Event handling in VueJs",
+                counter: 0,
 
-      },
-      methods:{
-        //vue function
-        increment:function(iby){
-          this.counter+=iby;
-        },
+            },
+            methods: {
+                //vue function
+                increment: function(iby) {
+                    this.counter += iby;
+                },
+                decrement: function(dby) {
+                    this.counter -= dby;
+                }
+            }
+        });
 
-        decrement:function(dby){
-          this.counter-=dby;
-        }
-         
-         }
-  });
-</script>
+        var practice1 = new Vue({
+            el: "#practice",
+            data: {
+                name: 'Event handling',
+                countn: 0,
+            },
+            methods: {
+                ssub: function(sby) {
+                    this.countn -= sby;
+                },
+                aadd: function(aby) {
+                    this.countn += aby;
+                },
+            }
+        });
+    </script>
 </body>
+
 </html>

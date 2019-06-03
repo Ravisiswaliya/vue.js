@@ -1,44 +1,69 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Vue js3</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Vue js3</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
+
 <body>
-  <div class="container">
-	   <div id="app3">
-        <h2>{{name}}</h2>
-        <a v-bind:href="url" target="_blank">Go to LinkedIn Profile</a> 
-        <br>
-        <form method="post" class="col-md-4">
-          <input type="" name="" v-bind:value="fname" class="form-control">
-          <input type="" name="" v-bind:value="email" class="form-control">
-          <button class="btn btn-danger">Submit</button>
-        </form>
-        <div v-html='htmlContent'>{{htmlContent}}</div>
-        
-     </div>
-  </div>
+    <div class="container">
+        <div id="app3" class="col-md-5">
+            <h3>{{name}}</h3>
+            <a v-bind:href="url" target="_blank">Go to LinkedIn Profile</a>
+            <br>
+            <form method="get">
+                <input type="" name="" v-bind:value="fname" class="form-control">
+                <br>
+                <input type="" name="" v-bind:value="email" class="form-control">
+                <br>
+                <button class="btn btn-block btn-danger">Submit</button>
+            </form>
+            <div v-html='htmlContent'></div>
+        </div>
 
+        <div id='practice' class="col-md-6">
+            <h3>{{name}}</h3>
+            <a v-bind:href='twitter'>Go to twitter Profile</a>
+            <form action="/" class="form">
+                <input type="" v-bind:value='username' class="form-control"><br>
+                <input type="" v-bind:value='location' class="form-control">
+                <br>
+                <button class="btn btn-block btn-success">Submit</button>
+            </form>
+            <div v-html='content'></div>
+        </div>
+    </div>
 
-<script>
-  var myview3 = new Vue({
-      el: "#app3",
-      data:{
-        name:'Vue data &form input binding Practice',
-        url:'https://www.linkedin.com/in/ravisiswaliya',
-        fname:'Ravi',
-        email:'ravisiswaliya@gmail.com',
-        htmlContent:"<p>This is html binding example</p>"
+    <script>
+        var myview3 = new Vue({
+            el: "#app3",
+            data: {
+                name: 'Vue data & form input binding Practice',
+                url: 'https://www.linkedin.com/in/ravisiswaliya',
+                fname: 'Ravi',
+                email: 'ravisiswaliya@gmail.com',
+                htmlContent: "<h3>HTML BINDING</h3><p> HTML Binding</p>"
+            },
+            methods: {
+                //vue function
 
-      },
-      methods:{
-        //vue function
-         
-         }
-  });
-</script>
+            }
+        });
+
+        var practice1 = new Vue({
+            el: "#practice",
+            data: {
+                name: 'Vue form input binding',
+                username: 'ravisiswaliya',
+                location: 'New Delhi',
+                twitter: 'https://www.twitter.com/ravisiswaliya',
+                content: "<h4>This is another example of html binding</h4><p>HTML Binding</p>"
+            }
+        });
+    </script>
 </body>
+
 </html>
