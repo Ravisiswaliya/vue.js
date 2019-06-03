@@ -1,31 +1,50 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Vue js</title>
+    <title>Vue js</title>
 
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="vue.js"></script>
 </head>
-<body>
-  <div class="container">
-	<div id="app">
- <h1>{{message}}</h1>
- <p>{{fname}}</p>
- <p>{{email}}</p>
-  </div>
-  </div>
-<script>
-  var myview = new Vue({
-      el: "#app",
-      data:{
-        message :'Profile Info:',
-        fname:'Ravi Siswaliya',
-        email:'ravisiswaliya@gmail.com'
-      }
 
-  });
-</script>
+<body>
+    <div class="container">
+        <div id="app">
+            <h3>{{message}}</h3>
+            <p>Name:{{fname}}</p>
+            <p>Email:{{email}}</p>
+            <p>Mobile:{{mobile}}</p>
+        </div>
+        <div id="skills">
+            <h3>Tech Skills</h3>
+            <p>Languages: [{programming}]</p>
+            <p>[{framework}]</p>
+            <p>[{webtech}]</p>
+        </div>
+    </div>
+    <script>
+        var myview = new Vue({
+            el: "#app",
+            data: {
+                message: 'Profile Info:',
+                fname: 'Xxxx Xxxxxx',
+                email: 'xxxxxx@gmail.com',
+                mobile: '+91 00000 00000'
+            }
+        });
+
+        var technical = new Vue({
+            delimiters: ['[{', '}]'],
+            el: "#skills",
+            data: {
+                programming: 'Python, Java Script, PHP,',
+                framework: 'Django, Scrapy, Vue JS',
+                webtech: 'HTML5,CSS3,Bootstrap',
+            }
+        });
+    </script>
 </body>
+
 </html>

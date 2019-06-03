@@ -16,6 +16,7 @@
        <h4>Amount: {{amount}}</h4>
        <h4>Tax {{tax}}%: {{ta}}</h4>
        <h4>Total Amount: {{t_a}}</h4>
+       
 </form>
       
       
@@ -43,6 +44,7 @@
         }
          
          },
+         //computed function
          computed:{
           ta:function(){
              this.t_amount =  this.amount*this.tax/100

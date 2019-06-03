@@ -1,2 +1,3 @@
 # vue.js
-vue.js practice code
+VueJs practice code
+
