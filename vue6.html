@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Vue js6</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Vue js6</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
+
 <body>
-  <div class="container">
-	   <div id="app4">
-      <h3>{{name}}</h3>
-      <input type="text" v-on:keypress='kpf' name="" placeholder="key press function"> <br>
-       <input type="text" v-on:keyup='kuf' name="" placeholder="key up function">
-       
-     </div>
-  </div>
+    <div class="container">
+        <div id="app4">
+            <h3>{{name}}</h3>
+            <input type="text" v-on:keypress='kpf' name="" placeholder="key press function"> <br>
+            <input type="text" v-on:keyup='kuf' name="" placeholder="key up function">
+
+        </div>
+    </div>
 
 
-<script>
-  var myview4 = new Vue({
-      el: "#app4",
-      data:{
-          name: "KeyBoard Event in VueJs",
-            
-
-      },
-      methods:{
-        //vue function
-        //key press function
-        kpf:function(){
-          console.log('Key Pressed')
-        },
-        //key up function
-        kuf:function(){
-          console.log('key Up function')
-        },
-        
-        }
-  });
-</script>
+    <script>
+        var myview4 = new Vue({
+            el: "#app4",
+            data: {
+                name: "KeyBoard Event in VueJs",
+            },
+            methods: {
+                //vue function
+                //key press function
+                kpf: function() {
+                    console.log('Key Pressed')
+                },
+                //key up function
+                kuf: function() {
+                    console.log('key Up function')
+                },
+            }
+        });
+    </script>
 </body>
+
 </html>

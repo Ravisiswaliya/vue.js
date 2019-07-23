@@ -14,9 +14,8 @@
             <h3>{{name}}</h3>
             <div class="mva" v-on:mousemove='mvfunction' style="height: 200px;width: 200px;border: 2px solid black;">
                 <span>{{x}}, {{y}}</span>
-                <button type="button" v-on:mouseover='omo'>Mouse Over</button>
             </div>
-
+            <button type="button" v-on:mouseover='omo'>Mouse Over</button>
         </div>
     </div>
 
@@ -36,7 +35,7 @@
                     this.y = event.offsetY;
                 },
                 omo: function() {
-                    console.log('Mouse Over function')
+                    alert('Mouse Over function activated.')
                 }
             }
         });
