@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Get Data From API</title>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+<style type="text/css">
+  .cpost{
+    background-color: whitesmoke;
+    padding:3%;
+    margin: 10px;
+    
+  }
+</style>
+
+</head>
+<body>
+  <div class="container">
+	   <div id="app">
+      <h3 class="text-center">All Posts</h3><hr>
+      <input type="text" placeholder="Search..." class="form-control" v-model="search">
+      <p>You are searching for:<b>{{search}}</b></p>
+        <div v-rand v-for="post in filterPosts" class=" col-md-12 cpost">
+            <h5>{{post.title | titleCase}}</h5>
+            <p>{{post.body}}</p>
+        </div>
+      
+     </div>
+     
+  </div>
+<p></p>
+<script>
+  var myview = new Vue({
+    el: '#app',
+    data:{
+      posts:[],
+      search:'',
+    },
+    methods:{},
+
+    created(){
+      //fetching data from Fake API
+      this.$http.get('https://jsonplaceholder.typicode.com/posts')
+      .then(function(data){
+        this.posts = data.body.slice(0,10)
+      })
+    },
+
+    computed:{
+      // serach post function
+      filterPosts:function(){
+        return this.posts.filter((post)=>{
+          return post.title.match(this.search)
+        })
+      }
+    },
+
+    // local filters
+    filters:{
+      // Filter Function To Convert Str To Title Case
+       titleCase(value){
+        return value.replace(/\w\S*/g, function(txt){
+          return txt.charAt(0).toUpperCase()+txt.substr(1).toLowerCase();
+        })
+       }
+    },
+
+    // local directives
+    directives:{
+      // creting custom directive to change color rendomly 
+     rand:{
+        bind(el){
+          el.style.color = "#" + Math.random().toString().slice(2,8)
+        },
+      },
+    },
+
+
+  });
+     
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
