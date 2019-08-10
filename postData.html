@@ -1,33 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>VueJs 13</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<title>Post Data To API</title>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
 <style type="text/css">
-
+  #cpost{
+    border:1px solid black;
+    border-radius: 5px;
+    padding:3%;
+  }
 </style>
 
 </head>
 <body>
   <div class="container">
-	   <div id="app">
-        <form method="post">
-          <input type="number" name="userID" placeholder="userID" v-model='post.userID'>
-          <p>{{post.userID}}</p>
-          <input type="number" name="id" placeholder="id" v-model='post.id'>
-          <p>{{post.id}}</p>
-          <input type="text" name="title" placeholder="title" v-model='post.title'>
-          <p>{{post.title}}</p>
-          <input type="text" name="body" placeholder="body" v-model='post.body'>
-          <p>{{post.body}}</p>
-          <button @click.prevent="postData">Create Post</button>
-        </form>
+	   <div id="app"><br><br>
 
-        
+      <div class="col-md-4 offset-md-4" id="cpost">
+        <form method="post">
+          <h5 v-if="submitted" class="text-success">Post Successfully Created!</h5>
+          <h3 class="text-center">Create A New Post</h3><hr>  
+          <input type="number" name="userID" placeholder="userID" v-model='post.userID' class="form-control"><br>
+          
+          <input type="number" name="id" placeholder="id" v-model='post.id' class="form-control"><br>
+          
+          <input type="text" name="title" placeholder="title" v-model='post.title' class="form-control">
+          <br>
+          
+          <input type="text" name="body" placeholder="body" v-model='post.body' class="form-control">
+          <br>
+          <button @click.prevent="postData" class="btn btn-success btn-block">Create Post</button>
+        </form>
+      </div>   
+      <div class="text-center">
+        <h4>{{post.userID}}</h4>
+        <h4>{{post.id}}</h4>
+        <h4>{{post.title}}</h4>
+        <h4>{{post.body}}</h4>
      </div>
+     </div>
+     
   </div>
 
 
@@ -40,8 +55,8 @@
         id:"",
         title:'',
         body:'',
-      }
-      
+      },
+      submitted:false,
     },
     methods:{
       postData(){
@@ -51,7 +66,8 @@
           title:this.post.title,
           body:this.post.body
           }).then(function(data){
-            console.log(data);
+            console.log(data),
+            this.submitted = true;
           })
       }
     },
