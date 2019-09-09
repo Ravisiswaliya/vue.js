@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>VueJs 10</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="app3">
+            <h3>Upload file Example</h3>
+            <input type="file" @change="onFileSelected"><br>
+            <button @click="onUpload">Upload File</button>
+        </div>
+    </div>
+
+
+    <script>
+        var myview3 = new Vue({
+            el: "#app3",
+
+            data: {
+                selectedFile: null
+            },
+            methods: {
+                onFileSelected(event) {
+                    //console.log(event)
+                    this.selectedFile = event.target.files[0]
+                    console.log(this.selectedFile)
+                },
+
+                onUpload() {
+                    let fd = new FormData();
+                    fd.append('image', this.selectedFile);
+                    fd.append('name', this.selectedFile.name);
+                    fd.append('title', "demo_imaage")
+
+                    /* axios.post('api_url', fd)
+                        ..then((result) => {
+
+                        }).catch((err) => {
+
+                        });
+ */
+                }
+            },
+
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue Router</title>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+</head>
+<body>
+	<h3 class="text-center">Vue Router Example</h3>
+
+<script>
+	import VueRouter form 'vue-router'
+	Vue.use(VueRouter);
+
+	const router = new VueRouter({
+
+	});
+
+	//routes.js
+	export default[
+		{path:'/', component:Blogs},
+		{path:'/about', component:About},
+		{path:'/contact', component:Contact}
+	]
+</script>
+</body>
+</html>

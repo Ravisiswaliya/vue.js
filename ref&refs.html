@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VueJs 10</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div class="container">
+    <br><br><br>
+	 <div id="app3">
+      <input type="text" name="email" ref="email">
+      <button @click='submit'>Submit</button>
+    </div>
+  </div>
+
+
+<script>
+  var myview3 = new Vue({
+      el: "#app3",
+      data:{},
+      methods:{
+        submit(){
+          console.log(this.$refs);
+          console.log(this.$refs.email.baseURI);
+
+        }
+      },      
+     //computed function
+      computed:{},
+  });
+</script>
+</body>
+</html>
